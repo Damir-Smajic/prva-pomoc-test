@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test prve pomoći - random pitanja</title>
+  <style>
+    :root {
+      --bg: #f5f1ea;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #111827;
+      --accent-soft: #f3f4f6;
+      --good: #0f7a3b;
+      --good-bg: #f0fdf4;
+      --good-border: #86efac;
+      --bad: #b42318;
+      --bad-bg: #fff7f7;
+      --bad-border: #fecaca;
+      --warn: #b45309;
+      --warn-bg: #fff7ed;
+      --warn-border: #fed7aa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #f7f3ec 0%, #eef2f7 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .app {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 36px);
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+    }
+
+    .start-panel {
+      padding: 26px;
+    }
+
+    .start-grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      margin: 22px 0;
+    }
+
+    .choice-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #fff;
+      padding: 16px;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+      font-weight: 800;
+    }
+
+    .choice-card:hover {
+      transform: translateY(-1px);
+      border-color: #cbd5e1;
+      background: #fbfdff;
+    }
+
+    .choice-card.active {
+      border-color: var(--accent);
+      background: #f9fafb;
+      box-shadow: inset 0 0 0 1px var(--accent);
+    }
+
+    .custom-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .custom-row label {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .custom-row input {
+      width: 130px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 16px;
+      background: #fff;
+    }
+
+    .progress-wrap {
+      padding: 18px 22px 0;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .progress {
+      height: 10px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+
+    .card {
+      padding: 26px 22px 18px;
+    }
+
+    .question-number {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .question {
+      font-size: clamp(20px, 2.4vw, 28px);
+      line-height: 1.25;
+      margin: 0 0 22px;
+      letter-spacing: -0.02em;
+    }
+
+    .answers {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .answer {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      background: #fff;
+      cursor: pointer;
+      transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+    }
+
+    .answer:hover {
+      transform: translateY(-1px);
+      border-color: #cbd5e1;
+      background: #fbfdff;
+    }
+
+    .answer.checked-correct {
+      border-color: var(--good-border);
+      background: var(--good-bg);
+    }
+
+    .answer.checked-wrong {
+      border-color: var(--bad-border);
+      background: var(--bad-bg);
+    }
+
+    .answer.reveal-correct {
+      border-color: var(--good-border);
+      background: var(--good-bg);
+      box-shadow: inset 0 0 0 1px var(--good-border);
+    }
+
+    .answer.locked {
+      cursor: default;
+    }
+
+    .answer.locked:hover {
+      transform: none;
+    }
+
+    .answer input {
+      margin-top: 3px;
+      transform: scale(1.15);
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .answer.locked input {
+      cursor: default;
+    }
+
+    .letter {
+      font-weight: 800;
+      min-width: 22px;
+    }
+
+    .answer-text {
+      line-height: 1.45;
+    }
+
+    .feedback {
+      display: none;
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin: 4px 0 18px;
+      line-height: 1.45;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .feedback.good {
+      display: block;
+      border-color: var(--good-border);
+      background: var(--good-bg);
+      color: var(--good);
+    }
+
+    .feedback.bad {
+      display: block;
+      border-color: var(--bad-border);
+      background: var(--bad-bg);
+      color: var(--bad);
+    }
+
+    .feedback.warn {
+      display: block;
+      border-color: var(--warn-border);
+      background: var(--warn-bg);
+      color: var(--warn);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0 22px 22px;
+    }
+
+    button {
+      appearance: none;
+      border: none;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.12s ease, opacity 0.12s ease;
+      font-size: 15px;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-secondary {
+      background: var(--accent-soft);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-warning {
+      background: #fff7ed;
+      color: var(--warn);
+      border: 1px solid #fed7aa;
+    }
+
+    .btn-good {
+      background: var(--good);
+      color: #fff;
+    }
+
+    .jump {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      flex-wrap: wrap;
+    }
+
+    .jump select {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px 12px;
+    }
+
+    .middle-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .results {
+      display: none;
+      padding: 24px;
+    }
+
+    .score-card {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .score {
+      font-size: clamp(34px, 5vw, 56px);
+      font-weight: 900;
+      margin: 0;
+      letter-spacing: -0.05em;
+    }
+
+    .score.good {
+      color: var(--good);
+    }
+
+    .score.bad {
+      color: var(--bad);
+    }
+
+    .review {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .review-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .review-item.correct {
+      border-color: #bbf7d0;
+      background: #f0fdf4;
+    }
+
+    .review-item.wrong {
+      border-color: #fecaca;
+      background: #fff7f7;
+    }
+
+    .review-title {
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 720px) {
+      .start-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .app {
+        padding: 14px;
+      }
+      .card, .results, .start-panel {
+        padding: 18px;
+      }
+      .nav {
+        padding: 0 18px 18px;
+      }
+      .nav button, .middle-actions {
+        width: 100%;
+      }
+      .middle-actions button {
+        width: 100%;
+      }
+      .jump {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .jump select {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="topbar">
+      <div>
+        <h1>Test prve pomoći</h1>
+        <p class="subtitle">Prije početka izaberi broj pitanja. Svaki novi test nasumično bira i miješa pitanja iz originalnog PDF-a.</p>
+      </div>
+      <div class="badge" id="answeredBadge">Nije započeto</div>
+    </div>
+
+    <div class="panel start-panel" id="startPanel">
+      <h2>Koliko pitanja želiš u testu?</h2>
+      <p class="subtitle">Možeš izabrati brzu opciju ili upisati svoj broj od 1 do 100.</p>
+
+      <div class="start-grid" id="quickChoices">
+        <div class="choice-card" data-count="10">10</div>
+        <div class="choice-card active" data-count="20">20</div>
+        <div class="choice-card" data-count="30">30</div>
+        <div class="choice-card" data-count="50">50</div>
+        <div class="choice-card" data-count="100">100</div>
+      </div>
+
+      <div class="custom-row">
+        <label for="customCount">Custom broj pitanja:</label>
+        <input id="customCount" type="number" min="1" max="100" value="20" />
+      </div>
+
+      <button class="btn-primary" id="startBtn">Start random test</button>
+    </div>
+
+    <div class="panel hidden" id="testPanel">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span id="progressText">Pitanje 1 od 20</span>
+          <span id="savedText">Odgovor se zaključava nakon “Check answer”.</span>
+        </div>
+        <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+
+      <div class="card">
+        <div class="question-number" id="questionNumber"></div>
+        <h2 class="question" id="questionText"></h2>
+        <div class="answers" id="answers"></div>
+        <div class="feedback" id="feedbackBox"></div>
+      </div>
+
+      <div class="nav">
+        <button class="btn-secondary" id="prevBtn">← Previous</button>
+
+        <div class="middle-actions">
+          <button class="btn-good hidden" id="checkBtn">Check answer</button>
+          <div class="jump">
+            <label for="questionSelect">Jump to:</label>
+            <select id="questionSelect"></select>
+          </div>
+        </div>
+
+        <button class="btn-secondary" id="nextBtn">Next →</button>
+        <button class="btn-primary hidden" id="finishBtn">Finish test</button>
+      </div>
+    </div>
+
+    <div class="panel results" id="resultsPanel">
+      <div class="score-card">
+        <p class="small">Rezultat</p>
+        <p class="score" id="scoreText"></p>
+        <p id="scoreSummary"></p>
+        <button class="btn-secondary" id="backToTestBtn">Back to test</button>
+        <button class="btn-primary" id="newRandomBtn">New random test</button>
+        <button class="btn-warning" id="resetBtn">Reset this test</button>
+      </div>
+      <h2>Pregled odgovora</h2>
+      <p class="small">Prikazana su netačna i neodgovorena pitanja. Za kompletan pregled klikni “Show all”.</p>
+      <button class="btn-secondary" id="toggleReviewBtn">Show all</button>
+      <div class="review" id="review"></div>
+    </div>
+  </div>
+
+  <script>
+    const allQuestions = [{"number": 1, "question": "Šta sadrži poziv hitnoj medicinskoj pomoći?", "options": {"A": "Tačnu lokaciju, broj povrijeđenih osoba i vrstu povreda", "B": "Tačnu lokaciju, broj povrijeđenih osoba bez obzira na stepen povređivanja", "C": "Tačnu lokaciju bez opisa povreda"}, "correct": "A"}, {"number": 2, "question": "Šta nije prvi red hitnosti?", "options": {"A": "Povreda kičme", "B": "Povreda glave praćena besvjesnim stanjem", "C": "Stanje praćeno gušenjem"}, "correct": "A"}, {"number": 3, "question": "Ko pruža prvu pomoć na licu mjesta?", "options": {"A": "Medicinsko osoblje koje odmah pozivamo", "B": "Slučajni prolaznik ili osoba koja se nađe na licu mjesta", "C": "Stručne službe na licu mjesta"}, "correct": "B"}, {"number": 4, "question": "Koji su znaci teškog iskrvarenja (hemoragijskog šoka)?", "options": {"A": "Izrazito bljedilo, ubrzano i površno disanje (kratak dah), teško opipljiv i ubrzan puls, koža orošena hladnim znojem, žeđanje, opća slabost, klonulost", "B": "Usporen puls i povišen krvni pritisak, slabost, uznemirenost", "C": "Vidi se krv na odjeći, duboko disanje, slabost"}, "correct": "A"}, {"number": 5, "question": "Šta najviše ugrožava život unesrećenog?", "options": {"A": "Prestanak disanja, besvjesno stanje i jako krvarenje", "B": "Prijelom kičmenog stuba", "C": "Udarac u glavu tupim predmetom"}, "correct": "A"}, {"number": 6, "question": "Šta je šok?", "options": {"A": "Iznenadna stresna situacija", "B": "Teško stanje nastalo zbog gubitka krvi, tečnosti i jakog bola", "C": "Strah od posljedica nesreće"}, "correct": "B"}, {"number": 7, "question": "Šta je imobilizacija?", "options": {"A": "Postavljanje povrijeđenog dijela tijela u nepokretan, stabilan položaj, izvan funkcije u određenom periodu", "B": "Postavljanje tijela u stanje pripravnosti i hitan transport", "C": "Postavljanje povrijeđenog na stomak i hitan transport"}, "correct": "A"}, {"number": 8, "question": "Koje je osnovno pravilo imobilizacije?", "options": {"A": "Da se imobiliziraju dva susjedna zgloba", "B": "Da se imobilizira jedan povrijeđen zglob", "C": "Da se imobiliziraju svi zglobovi"}, "correct": "A"}, {"number": 9, "question": "Koliko dugo se vrši oživljavanje?", "options": {"A": "20 minuta", "B": "40 minuta", "C": "Do dolaska stručne pomoći"}, "correct": "C"}, {"number": 10, "question": "Kada ne treba započeti oživljavanje (kardiopulmonalnu reanimaciju - KPR)?", "options": {"A": "Ako je sigurno prošlo više od 10 minuta od zastoja srca", "B": "Ako postoji otvorena rana na grudnom košu", "C": "Ako je opečena površina tijela veća od 60%"}, "correct": "A"}, {"number": 11, "question": "Kod oživljavanja (KPR) odnos disanja i vanjske masaže srca je:", "options": {"A": "5 upuhivanja i 5 masaža srca, tj. odnos 1:1", "B": "2 upuhivanja i 15 masaža srca, tj. odnos 2:15", "C": "30 masaža srca i 2 upuhivanja, tj. odnos 30:2"}, "correct": "C"}, {"number": 12, "question": "Kojom brzinom se vrši pritisak kod vanjske masaže srca?", "options": {"A": "80 do 120 u minuti", "B": "100 do 120 u minuti", "C": "80 do 100 u minuti"}, "correct": "B"}, {"number": 13, "question": "Šta prvo treba učiniti kod udara električne struje?", "options": {"A": "Povrijeđenog zakopati u zemlju da bi zemlja izvukla struju", "B": "Prekinuti strujni krug, izvući utikač, osigurač, isključiti sklopku, izolirajućim predmetom skloniti izvor električnog napajanja", "C": "Odmah započeti sa oživljavanjem"}, "correct": "B"}, {"number": 14, "question": "Šta učiniti ukoliko situacija nije sigurna i ne možete pristupiti mjestu nesreće?", "options": {"A": "Hitno doći do povrijeđene osobe", "B": "Sanirati najhitnija stanja", "C": "Pozvati hitnu medicinsku pomoć i sačekati dolazak nadležnih"}, "correct": "C"}, {"number": 15, "question": "Šta smijemo učiniti kad manje strano tijelo upadne u oko (poput čestica prašine, truna i slično)?", "options": {"A": "Strano tijelo ukloniti sterilnom gazom ili gornji kapak prevući preko trepavica kako bismo uklonili strano tijelo", "B": "Protrljati ili isprati oko kako bismo uklonili strano tijelo", "C": "Ne dirati ništa, zaviti oba oka i transportirati povrijeđenog do bolnice očnom ljekaru"}, "correct": "A"}, {"number": 16, "question": "Šta se podrazumijeva pod opekotinama prvog stepena?", "options": {"A": "Opečena je koža, potkožno masno tkivo i mišići u predjelu opekotine", "B": "Zahvaćeni su površinski dijelovi kože, koža je crvena, bez mjehura, lako otečena, a postaje vrlo bolna nakon nekoliko sati", "C": "Zahvaćeni su dublji slojevi tkiva i kosti"}, "correct": "B"}, {"number": 17, "question": "Šta kod opekotina podrazumijeva pravilo 9?", "options": {"A": "18% zahvaćenosti tijela - prednja strana grudnog koša i trbuha", "B": "9% genitalije", "C": "18% jedna ruka"}, "correct": "A"}, {"number": 18, "question": "Koji su neki od znakova predoziranja narkoticima?", "options": {"A": "Proširene zjenice, besvjesno stanje", "B": "Pojačani refleksi i koncentracija", "C": "Koža koja se ljušti"}, "correct": "A"}, {"number": 19, "question": "Šta je AED?", "options": {"A": "Automatski eksterni defibrilator", "B": "Automatski ekstremni defibrilator", "C": "Automatski eksterni dozimetar"}, "correct": "A"}, {"number": 20, "question": "Koji su znaci unutrašnjeg krvarenja?", "options": {"A": "Usporeno disanje", "B": "Boja kože lica je crvena a disanje usporeno", "C": "Blijeda koža orošena znojem,usne i jezik suhi, ubrzano disanje, malaksalost i jak osjećaj žeđi"}, "correct": "C"}, {"number": 21, "question": "U kojem položaju se transportira osoba sa povredom natkoljenice?", "options": {"A": "U sjedećem položaju sa prethodno izvršenom imobilizacijom", "B": "Nije bitan položaj, bitna je imobilizacija", "C": "U ležećem položaju sa prethodno izvršenom imobilizacijom"}, "correct": "C"}, {"number": 22, "question": "Kada se primjenjuje Hajmlihov hvat?", "options": {"A": "Kod utapanja", "B": "Kod gušenja stranim tijelom", "C": "Kod gušenja ugljenmonoksidom"}, "correct": "B"}, {"number": 23, "question": "Koji su neki od znakova moždanog udara?", "options": {"A": "Teškoće sa vidom, problemi u govoru i gubitak ravnoteže", "B": "Iskašljavanje krvave pjene", "C": "Svrbež i peckanje kože"}, "correct": "A"}, {"number": 24, "question": "Prema kojim sljedećim simptomima i znacima prepoznajemo osobu koja je jako iskrvarila?", "options": {"A": "Osoba je malo blijeda, modra u licu, nije raspoložena, više je nemirna, osjeća opću slabost i malaksalost", "B": "Osoba je modra u licu, uznemirena, konfuzna, puls je usporen ali se normalno lako napipa, diše duboko, osjeća slabost", "C": "Osoba ja izrazito blijeda, kože orošene hladnim i ljepljivim znojem, suhih usta, osjeća žeđ, opću slabost i malaksalost do klonulosti"}, "correct": "C"}, {"number": 25, "question": "Koja je pravilna metoda zaustavljanja krvarenja?", "options": {"A": "Podvezivanje uda", "B": "Direktan pritisak na ranu", "C": "Autotransfuzija"}, "correct": "B"}, {"number": 26, "question": "Kako se provjerava gubitak svijesti?", "options": {"A": "Pritiskom na glavu i čelo da osoba otvori oči i upitom šta se dogodilo", "B": "Glasnim dozivanjem (komunikacija govorom), hvatanjem za ramena, laganim protresanjem ramena bez pomicanja", "C": "Metodom gledam, slušam, osjećam"}, "correct": "B"}, {"number": 27, "question": "Koji su neki od znakova epileptičnih napada?", "options": {"A": "Ubrzano disanje", "B": "Groznica i povišena tjelesna temperatura", "C": "Trzanje – grčenje ekstremiteta i/ili cijelog tijela praćeno besvjesnim stanjem, nekad i umokravanje"}, "correct": "C"}, {"number": 28, "question": "Zbog čega su opasne opekotine koje zahvataju veću površinu tijela?", "options": {"A": "Zbog nastanka upale pluća", "B": "Zbog gubitka veće količine tečnosti i infekcije", "C": "Zbog gubitka veće količine krvi"}, "correct": "B"}, {"number": 29, "question": "Koji je postupak pružanja prve pomoći kod otvorenog prijeloma kosti bez krvarenja?", "options": {"A": "Imobilizacija i hitan transport", "B": "Prekrivanje rane sterilnom gazom, imobilizacija, transport nije hitan", "C": "Prekrivanje rane sterilnom gazom, istezanje, hitan transport"}, "correct": "B"}, {"number": 30, "question": "U koji položaj postavljamo povrijeđenog kod povrede kostiju karlice?", "options": {"A": "U položaj autotransfuzije", "B": "Ostavljamo povrijeđenog u zatečenom položaju", "C": "U bočni ili koma položaj"}, "correct": "B"}, {"number": 31, "question": "Koji je normalan broj otkucaja srca kod zdrave osobe?", "options": {"A": "100 otkucaja u minuti", "B": "60 do 80 otkucaja u sekundi", "C": "60 do 80 otkucaja u minuti"}, "correct": "C"}, {"number": 32, "question": "Kako pružiti prvu pomoć kod iščašenja zgloba?", "options": {"A": "Iščašeni zglob učvrstiti, utegnuti zavojem, staviti na njega hladne obloge i podići ga", "B": "Dvije osobe će potezanjem povrijeđenog zgloba u suprotnom pravcu vratiti iščašeni zglob u ležište, imobilizirati ga i podići", "C": "Sa prednje strane imobilizirati dva susjedna zgloba"}, "correct": "A"}, {"number": 33, "question": "U kojem položaju se transportira osoba u besvjesnom stanju?", "options": {"A": "U stabilnom polusjedećem položaju", "B": "U stabilnom ležećem položaju", "C": "U stabilnom bočnom položaju"}, "correct": "C"}, {"number": 34, "question": "Koji je postupak pružanja prve pomoći kod zmijskog ujeda?", "options": {"A": "Pozvati hitnu medicinsku pomoć, strogo mirovanje unesrećenog", "B": "Staviti podvesku iznad mjesta ujeda i dobro stegnuti", "C": "Isisati otrov iz rane, osobu transportirati do zdravstvene ustanove"}, "correct": "A"}, {"number": 35, "question": "Šta treba učiniti kod udara groma?", "options": {"A": "Zaštititi unesrećenog od groma", "B": "Zakopati unesrećenog da zemlja izvuče opasan elektricitet", "C": "Pozvati hitnu medicinsku pomoć, ako mjesto nije sigurno, unesrećenog izmjestiti na sigurno, procijeniti svijest, disanje i cirkulaciju te odmah započni KPR kod vitalno ugroženih"}, "correct": "C"}, {"number": 36, "question": "Koji je postupak kod trovanja ispušnim gasovima?", "options": {"A": "Otvoriti vrata i prozore, unesrećenom omogućiti dotok svježeg zraka, potom pozvati pomoć", "B": "Započeti oživljavanje", "C": "Obavijestiti vatrogasce i hitnu pomoć i čekati dok oni ne stignu"}, "correct": "A"}, {"number": 37, "question": "U čemu se sastoji prva pomoć kod hemijske povrede oka?", "options": {"A": "Oko obilno ispirati čistom vodom i hitno transportirati povrijeđenog", "B": "Oko zaviti zavojem i povrijeđenog što prije odvesti do stručne pomoći", "C": "Isprati oko kapima za oči i hitno transportirati povrijeđenog"}, "correct": "A"}, {"number": 38, "question": "Šta su opekotine trećeg stepena?", "options": {"A": "One koje zahvataju površne slojeve kože i jako bole", "B": "One koje zahvataju kosti i stvaraju ugljenisanost", "C": "One koje izazivaju jaku bol sa sukrvicom"}, "correct": "B"}, {"number": 39, "question": "Šta je traumatski pneumotoraks?", "options": {"A": "Porast pritiska u plućima nakon traume koji teško ugrožava disanje", "B": "Hronična upala plućne maramice zbog pušenja i tuberkuloze", "C": "Traumatski pneumotoraks rezultat je tupe ili probojne traume koja oštećuje listove plućne maramice"}, "correct": "C"}, {"number": 40, "question": "Koji su znaci prestanka disanja?", "options": {"A": "Bljedilo usana", "B": "Unesrećeni je bez svijesti, ne može se vidjeti dizanje grudnog koša, čuti niti osjetiti izdahnuti zrak", "C": "Modrilo ruku i nogu"}, "correct": "B"}, {"number": 41, "question": "Koji su sigurni znaci smrti?", "options": {"A": "Gubitak svijesti, prestanak disanja i gubitak pulsa", "B": "Gubitak svijesti, prestanak disanja i gubitak pulsa te plave usne", "C": "Mačje oko, mrtvačke modre mrlje (pjege), mrtvačka mlitavost i mrtvačka ukočenost"}, "correct": "C"}, {"number": 42, "question": "Koji je postupak pružanja prve pomoći kod ujeda krpelja?", "options": {"A": "Mjesto ujeda natopiti alkoholom", "B": "Pincetom izvaditi krpelja, osobu uputiti u zdravstvenu ustanovu", "C": "Strogo mirovanje, stavljanje hladnih obloga"}, "correct": "B"}, {"number": 43, "question": "Kada upotrebljavamo kompresivni zavoj?", "options": {"A": "Za zaustavljanje srednje jakog krvarenja", "B": "Za kompresiju prijeloma, pritisak na kost", "C": "Kod jakih krvarenja kod amputacija"}, "correct": "A"}, {"number": 44, "question": "Koje su metode provjere disanja?", "options": {"A": "Gledam, pipam, osjetim", "B": "Gledam, slušam, osluškujem", "C": "Gledam, slušam, osjećam"}, "correct": "C"}, {"number": 45, "question": "Koji su neki od znakova toplotne iscrpljenosti?", "options": {"A": "Pretjerano znojenje, umor, mučnina", "B": "Glavobolja, osip po tijelu", "C": "Nekontrolirano mokrenje"}, "correct": "A"}, {"number": 46, "question": "Telefonski broj policije je:", "options": {"A": "135", "B": "122", "C": "125"}, "correct": "B"}, {"number": 47, "question": "Kod sumnje na ozljedu vratnog segmenta kičme prvu pomoć pružamo postavljanjem:", "options": {"A": "improviziranog okovratnika", "B": "povrijeđenog u koma položaj", "C": "zavoja oko vrata"}, "correct": "A"}, {"number": 48, "question": "Kako zaustavljamo krvarenje iz nosa?", "options": {"A": "Začepljivanjem nosa, zabacivanjem glave unazad i stavljanjem hladne obloge", "B": "Stiskanjem krila nosa između palca i kažiprsta i potiskivanjem brade na grudi", "C": "Stavljanjem hladnog obloga na glavu i vrat"}, "correct": "B"}, {"number": 49, "question": "Šta primjećujemo kod sumnje na alergijsku reakciju?", "options": {"A": "Osip, pospanost, teškoće prilikom disanja", "B": "Nepravilnost u čulu dodira ili paralizu", "C": "Grčeve u stomaku"}, "correct": "A"}, {"number": 50, "question": "Šta treba učiniti pri nailasku na mjesto nesreće?", "options": {"A": "Parkirati vozilo na sigurno mjesto uz upotrebu svjetlosne signalizacije, isključiti motor, postaviti znakove sigurnosti, pozvati hitnu pomoć i pristupiti pružanju prve pomoći", "B": "Hitno zvati prvu pomoć", "C": "Uključiti signalizaciju na automobilu i sačekati da naiđe drugo vozilo i hitna pomoć"}, "correct": "A"}, {"number": 51, "question": "Koja je prva pomoć kod nesvjestice?", "options": {"A": "Pozvati hitnu pomoć da se ne izgubi dragocjeno vrijeme i ponuditi unesrećenom osvježavajuće piće", "B": "Postaviti unesrećenog u ležeći položaj s uzdignutim nogama, raskomotiti ga te postaviti u bočni položaj ukoliko povraća", "C": "Raskomotiti tijesnu odjeću, mirno i pribrano započeti oživljavanje"}, "correct": "B"}, {"number": 52, "question": "Da li je pružanje prve pomoći u prometu za vozača moralna ili zakonska obaveza?", "options": {"A": "To je moralna obaveza i dobra volja vozača", "B": "Ne postoji jasno definirana obaveza, to su više humane preporuke", "C": "Pružanje prve pomoći u prometu je zakonska obaveza za svakog vozača"}, "correct": "C"}, {"number": 53, "question": "Koliko osoba vrši prenošenje osobe sa povredom kičme?", "options": {"A": "Ne vrši se prenošenje", "B": "Prenošenje vrši 4-5 osoba", "C": "Prenošenje vrši 6-7 a nekad i više osoba"}, "correct": "A"}, {"number": 54, "question": "Šta treba učiniti ako krv probije sve slojeve kompresivnog zavoja i pojavi se na površini?", "options": {"A": "Pojačati pritisak sa još jednim koturom zavoja", "B": "Ne treba ništa poduzimati", "C": "Samo prekriti sterilnom gazom"}, "correct": "A"}, {"number": 55, "question": "Kako se zbrinjavaju povrede nastale niskom temperaturom (smrzotine)?", "options": {"A": "Unesrećenog držati van prostorije i pozvati hitnu pomoć", "B": "Unesrećenog unijeti u toplu prostoriju i dati mu tople napitke", "C": "Unesrećenom skinuti odjeću, trljati ili masirati smrznute dijelove tijela i ponuditi mu toplu kupku"}, "correct": "B"}, {"number": 56, "question": "Koji se gas oslobađa pri sagorijevanju goriva, a koji u zatvorenom prostoru može izazvati smrt akutnim trovanjem?", "options": {"A": "Eurosuper 95, Super plus 98", "B": "Natrijum hlorid", "C": "Ugljenmonoksid"}, "correct": "C"}, {"number": 57, "question": "Šta je trijaža?", "options": {"A": "Određivanje prioriteta zbrinjavanja prema vrsti i težini povreda te razvrstavanje prema hitnosti transporta", "B": "Efikasno zbrinjavanje povreda", "C": "Određivanje pristupa povrijeđenim osobama"}, "correct": "A"}, {"number": 58, "question": "Telefonski broj službe hitne pomoći je:", "options": {"A": "122", "B": "123", "C": "124"}, "correct": "C"}, {"number": 59, "question": "Unesrećenog koji ima astmatični napad treba pitati ima li:", "options": {"A": "sprej-pumpicu-inhalator", "B": "nitroglicerin", "C": "leksaurin"}, "correct": "A"}, {"number": 60, "question": "Da li se strano tijelo uklanja iz rane?", "options": {"A": "Predmet koji je napravio ozljedu i nalazi se u rani ne smijemo nikako uklanjati", "B": "Da, uvijek", "C": "Da, samo u slučaju veće infekcije"}, "correct": "A"}, {"number": 61, "question": "Šta je srčani zastoj?", "options": {"A": "Poremećaj dotoka krvi u srčani mišić, srčani udar", "B": "Prestanak rada srca i zaustavljanje cirkulacije", "C": "Zapadanje jezika i poremećaj srčanog ritma"}, "correct": "B"}, {"number": 62, "question": "Koji su neki od znakova srčanog udara?", "options": {"A": "Bol u prsima koja traje, širi se u vrat, vilicu, ruku, praćena znojenjem, gušenjem, mučninom, nekad povraćanjem, slabošću, tjeskobom i strahom", "B": "Bol u dnu stomaka koja se širi u ekstremitete", "C": "Tupa bol u gornjem dijelu stomaka"}, "correct": "A"}, {"number": 63, "question": "Kako se pruža prva pomoć kod sunčanice i toplotnog udara?", "options": {"A": "Stavljanjem leda na glavu unesrećenog", "B": "Prenošenjem unesrećenog u hladan i prozračan prostor, oslobađanjem od viška odjeće, rashlađivanjem i davanjem hladnih napitaka", "C": "Stavljanjem tijela unesrećenog u bočni položaj"}, "correct": "B"}, {"number": 64, "question": "Šta je hipoglikemija?", "options": {"A": "Nizak nivo glukoze (šećera) u krvi", "B": "Visok nivo glukoze (šećera) u krvi", "C": "Visok nivo hormona u krvi"}, "correct": "A"}, {"number": 65, "question": "Koje su opasnosti kod besvjesnog stanja (unesrećeni je bez svijesti, leži na leđima i diše)?", "options": {"A": "Moguća oduzetost ruku i nogu", "B": "Gušenje jezikom, povraćenim sadržajem", "C": "Gubitak velike količine krvi"}, "correct": "B"}, {"number": 66, "question": "Šta je najvažnije kad dođemo na mjesto nesreće?", "options": {"A": "Zaštititi prvo sebe i ostale", "B": "Pomoći unesrećenom bez obzira na sve", "C": "Pozvati hitnu pomoć"}, "correct": "A"}, {"number": 67, "question": "Šta se stavlja na otvorenu ranu?", "options": {"A": "Samo dezinfekciono sredstvo pa onda gaza", "B": "Sterilna gaza", "C": "Asepsol, rivanol, jod ili drugo sredstvo"}, "correct": "B"}, {"number": 68, "question": "Šta je prva pomoć?", "options": {"A": "Pomoć koja se pruža u kolima hitne pomoći, prije ambulante ili bolnice", "B": "Pomoć koju pružaju zdravstveni radnici", "C": "Pomoć koja se ukazuje na mjestu nesreće"}, "correct": "C"}, {"number": 69, "question": "Šta je puls?", "options": {"A": "Vitalni parametar cirkulacije", "B": "Odraz naizmjeničnog širenja i suženja vena", "C": "Pulsiranje vena na vratu"}, "correct": "A"}, {"number": 70, "question": "U koji položaj postavljamo unesrećenog s povredom grudnog koša?", "options": {"A": "U polusjedeći položaj", "B": "U koma položaj", "C": "U ležeći položaj"}, "correct": "A"}, {"number": 71, "question": "Broj telefona vatrogasne službe je:", "options": {"A": "123", "B": "132", "C": "142"}, "correct": "A"}, {"number": 72, "question": "Do čega može dovesti pregrijavanje kabine motornog vozila?", "options": {"A": "Kvara na kontrolnoj tabli i zamagljenja", "B": "Isparavanja plastike i slabljenja imuniteta", "C": "Toplotnog udara"}, "correct": "C"}, {"number": 73, "question": "Šta su kontuzije?", "options": {"A": "Nagnječenja mekih tkiva", "B": "Povrede glave", "C": "Otvorene frakture"}, "correct": "A"}, {"number": 74, "question": "Čovjek normalno diše:", "options": {"A": "14 do 16 puta u minuti", "B": "12 do 20 puta u minuti", "C": "16 do 20 puta u minuti"}, "correct": "C"}, {"number": 75, "question": "Šta je potrebno zadovoljiti trijažom?", "options": {"A": "Red hitnosti ukazivanja pomoći", "B": "Sigurnosne mjere pružanja pomoći", "C": "Red hitnosti kod poziva u pomoć"}, "correct": "A"}, {"number": 76, "question": "Krvarenja dijelimo prema:", "options": {"A": "izgledu", "B": "jačini i brzini", "C": "lokalitetu, vremenu nastanka i povrijeđenom krvnom sudu"}, "correct": "C"}, {"number": 77, "question": "Šta je astma?", "options": {"A": "Poremećaj kod kojeg hronično zapaljenje bronhija uzrokuje oticanje i sužavanje dišnih puteva", "B": "Poremećaj kod kojeg osoba ima smanjen nivo šećera u krvi", "C": "Poremećaj kod kojeg se osoba guši i gubi svijest radi iskrvarenja"}, "correct": "A"}, {"number": 78, "question": "Kod zbrinjavanja krvarenja zaštitne rukavice koristimo kako bismo:", "options": {"A": "zaustavili krvarenje", "B": "zaštitili sebe i spriječili infekciju rane", "C": "spriječili širenje zaraze i smanjili krvarenje"}, "correct": "B"}, {"number": 79, "question": "Drugi red hitnosti čine:", "options": {"A": "besvjesno stanje", "B": "krvarenja bez općih znakova iskrvarenja", "C": "manje smrzotine i opekotine"}, "correct": "B"}, {"number": 80, "question": "Šta je zabranjeno kod razderotine?", "options": {"A": "Postaviti sterilne gaze", "B": "Trljati ranu da bi se isprala prljavština", "C": "Pritiskati ranu kako bismo zaustavili krvarenje"}, "correct": "B"}, {"number": 81, "question": "Ogrebotinu je važno:", "options": {"A": "ostaviti na čistom zraku", "B": "skinuti nečisti sloj kože", "C": "potpuno isprati vodom"}, "correct": "C"}, {"number": 82, "question": "Šta primjećujemo kod dehidracije?", "options": {"A": "Blijedu i suhu kožu koja se lako nabire, slabost", "B": "Povišenu tjelesnu temperaturu i nepravilno disanje", "C": "Nesvjesticu i nepravilno disanje"}, "correct": "A"}, {"number": 83, "question": "Hajmlihov zahvat ne smijemo primijeniti:", "options": {"A": "kod djece starije od 1 godine", "B": "kod trudnica ili gojaznih osoba", "C": "bez prisustva stručnih osoba"}, "correct": "B"}, {"number": 84, "question": "Kako diše osoba kod hiperventilacije?", "options": {"A": "Diše ubrzano", "B": "Diše plitko", "C": "Diše usporeno"}, "correct": "A"}, {"number": 85, "question": "Šta čini treći red hitnosti?", "options": {"A": "Prividna smrt", "B": "Iščašenja i uganuća zglobova", "C": "Manje smrzotine i opekotine"}, "correct": "C"}, {"number": 86, "question": "Trovanje alkoholom nastaje kada je nivo promila u krvi:", "options": {"A": "3 do 5", "B": "2 do 3", "C": "1 do 2"}, "correct": "A"}, {"number": 87, "question": "Koliko u dubinu se potiskuje prsna kost kod reanimacije odraslih?", "options": {"A": "9 do 10 cm", "B": "4 do 5 cm", "C": "2 do 3 cm"}, "correct": "B"}, {"number": 88, "question": "Trijaža može biti po:", "options": {"A": "uzrastu (prvo djeca)", "B": "ozljedama i prioritetu transporta", "C": "mjestu nesreće"}, "correct": "B"}, {"number": 89, "question": "Šta se prvo zbrinjava od navedenog?", "options": {"A": "Epileptični napad", "B": "Sumnja na uganuće skočnog zgloba", "C": "Krvarenje iz nosa"}, "correct": "A"}, {"number": 90, "question": "Kojim redoslijedom se vrši kardiopulmonalna reanimacija djece?", "options": {"A": "5 inicijalnih upuhivanja, a zatim vanjska masaža srca sa 2 upuhivanja", "B": "Vanjska masaža srca sa 2 upuhivanja, zatim 5 inicijalnih upuhivanja", "C": "2 upuhivanja, vanjska masaža srca, zatim 5 inicijalnih upuhivanja"}, "correct": "A"}, {"number": 91, "question": "Kakvu boju kože ima osoba otrovana ugljenmonoksidom?", "options": {"A": "Blijedu", "B": "Jarko ružičastu", "C": "Plavičasto sivu"}, "correct": "B"}, {"number": 92, "question": "Kada se ne izvodi zabacivanje glave unazad?", "options": {"A": "Kod ozljede vratne kičme", "B": "Kod djece", "C": "Kod prisustva stranog tijela u jednjaku"}, "correct": "A"}, {"number": 93, "question": "Čime se karakterizira drugi stepen opekotina?", "options": {"A": "Jakim krvarenjem", "B": "Pojavom mjehura ispunjenih tekućinom", "C": "Gubitkom funkcije opečenog dijela tijela"}, "correct": "B"}, {"number": 94, "question": "Koji su sigurni znaci prijeloma?", "options": {"A": "Krvarenje, otok", "B": "Crvenilo, neosjetljivost na bol, otvrdnuće tetive", "C": "Bol, deformacija i patološka gibljivost"}, "correct": "C"}, {"number": 95, "question": "Koliko u dubinu se pritišće prsna kost kod reanimacije beba?", "options": {"A": "Minimalno da se ne ozljede rebra i srce", "B": "1,5 do 2,5 cm", "C": "3 do 5 cm"}, "correct": "B"}, {"number": 96, "question": "Kako osiguravamo prohodnost dišnih puteva?", "options": {"A": "Zabacivanjem glave (defleksija)", "B": "Vađenjem stranog tijela", "C": "Pružanjem umjetnog disanja"}, "correct": "A"}, {"number": 97, "question": "Šta je cijanoza?", "options": {"A": "Žuta boja kože", "B": "Jarko crvena boja kože", "C": "Plavičasta prebojenost kože"}, "correct": "C"}, {"number": 98, "question": "Kako pružiti prvu pomoć kod blaže hipoglikemije?", "options": {"A": "Dati kocku šećera, čokoladu, zaslađen napitak", "B": "Dati inzulin", "C": "Osloboditi od odjeće koja steže i postaviti osobu u bočni položaj"}, "correct": "A"}, {"number": 99, "question": "Zašto ujed insekta u ustima ili grlu može biti opasan po život?", "options": {"A": "Zato što ujed izaziva malaksalost", "B": "Zato što se otok širi na sve udove", "C": "Zato što otok može zaustaviti disanje"}, "correct": "C"}, {"number": 100, "question": "Do čega dolazi zbog dehidratacije?", "options": {"A": "Do pojačanog znojenja", "B": "Do toplotnih mišićnih grčeva", "C": "Do sniženja tjelesne temperature"}, "correct": "B"}];
+    const STORAGE_KEY = "first_aid_random_test_v2";
+
+    let currentIndex = 0;
+    let testQuestions = [];
+    let selectedAnswers = {};
+    let checkedAnswers = {};
+    let selectedCount = 20;
+    let showAllReview = false;
+
+    const startPanel = document.getElementById("startPanel");
+    const testPanel = document.getElementById("testPanel");
+    const resultsPanel = document.getElementById("resultsPanel");
+
+    const quickChoices = document.getElementById("quickChoices");
+    const customCount = document.getElementById("customCount");
+    const startBtn = document.getElementById("startBtn");
+
+    const questionNumber = document.getElementById("questionNumber");
+    const questionText = document.getElementById("questionText");
+    const answersEl = document.getElementById("answers");
+    const feedbackBox = document.getElementById("feedbackBox");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const checkBtn = document.getElementById("checkBtn");
+    const finishBtn = document.getElementById("finishBtn");
+    const progressText = document.getElementById("progressText");
+    const progressFill = document.getElementById("progressFill");
+    const answeredBadge = document.getElementById("answeredBadge");
+    const questionSelect = document.getElementById("questionSelect");
+
+    const scoreText = document.getElementById("scoreText");
+    const scoreSummary = document.getElementById("scoreSummary");
+    const review = document.getElementById("review");
+    const backToTestBtn = document.getElementById("backToTestBtn");
+    const resetBtn = document.getElementById("resetBtn");
+    const newRandomBtn = document.getElementById("newRandomBtn");
+    const toggleReviewBtn = document.getElementById("toggleReviewBtn");
+
+    function clampCount(value) {
+      const number = Number(value);
+      if (Number.isNaN(number)) return 20;
+      return Math.max(1, Math.min(100, Math.floor(number)));
+    }
+
+    function shuffle(array) {
+      const copy = [...array];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function saveState() {
+      const state = {
+        currentIndex,
+        selectedCount,
+        testQuestions,
+        selectedAnswers,
+        checkedAnswers
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    function loadState() {
+      try {
+        const state = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        if (!state || !Array.isArray(state.testQuestions) || state.testQuestions.length === 0) return false;
+        currentIndex = state.currentIndex || 0;
+        selectedCount = state.selectedCount || state.testQuestions.length;
+        testQuestions = state.testQuestions;
+        selectedAnswers = state.selectedAnswers || {};
+        checkedAnswers = state.checkedAnswers || {};
+        return true;
+      } catch {
+        return false;
+      }
+    }
+
+    function clearState() {
+      localStorage.removeItem(STORAGE_KEY);
+    }
+
+    function startNewTest(count) {
+      selectedCount = clampCount(count);
+      testQuestions = shuffle(allQuestions).slice(0, selectedCount);
+      currentIndex = 0;
+      selectedAnswers = {};
+      checkedAnswers = {};
+      showAllReview = false;
+      saveState();
+
+      startPanel.classList.add("hidden");
+      testPanel.classList.remove("hidden");
+      resultsPanel.style.display = "none";
+      populateSelect();
+      renderQuestion();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function selectedAnswerCount() {
+      return testQuestions.filter(q => selectedAnswers[q.number]).length;
+    }
+
+    function checkedAnswerCount() {
+      return testQuestions.filter(q => checkedAnswers[q.number]).length;
+    }
+
+    function populateSelect() {
+      questionSelect.innerHTML = "";
+      testQuestions.forEach((q, index) => {
+        const opt = document.createElement("option");
+        opt.value = index;
+        const selected = selectedAnswers[q.number] ? " ✓" : "";
+        const checked = checkedAnswers[q.number] ? " 🔍" : "";
+        opt.textContent = `Pitanje ${index + 1}${selected}${checked}`;
+        questionSelect.appendChild(opt);
+      });
+    }
+
+    function updateProgress() {
+      const selected = selectedAnswerCount();
+      const checked = checkedAnswerCount();
+      answeredBadge.textContent = `Odabrano: ${selected} / ${testQuestions.length} · Provjereno: ${checked} / ${testQuestions.length}`;
+      const progress = ((currentIndex + 1) / testQuestions.length) * 100;
+      progressFill.style.width = `${progress}%`;
+    }
+
+    function renderQuestion() {
+      const q = testQuestions[currentIndex];
+      if (!q) return;
+
+      const hasSelection = Boolean(selectedAnswers[q.number]);
+      const isChecked = Boolean(checkedAnswers[q.number]);
+
+      questionNumber.textContent = `Pitanje ${currentIndex + 1} od ${testQuestions.length} · Originalno pitanje #${q.number}`;
+      questionText.textContent = q.question;
+      answersEl.innerHTML = "";
+      feedbackBox.className = "feedback";
+      feedbackBox.textContent = "";
+
+      ["A", "B", "C"].forEach(letter => {
+        const label = document.createElement("label");
+        label.className = "answer";
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `question-${q.number}`;
+        input.value = letter;
+        input.checked = selectedAnswers[q.number] === letter;
+        input.disabled = isChecked;
+
+        if (isChecked) {
+          label.classList.add("locked");
+          if (letter === q.correct) {
+            label.classList.add("reveal-correct");
+          }
+          if (selectedAnswers[q.number] === letter && selectedAnswers[q.number] === q.correct) {
+            label.classList.add("checked-correct");
+          }
+          if (selectedAnswers[q.number] === letter && selectedAnswers[q.number] !== q.correct) {
+            label.classList.add("checked-wrong");
+          }
+        }
+
+        input.addEventListener("change", () => {
+          selectedAnswers[q.number] = letter;
+          saveState();
+          populateSelect();
+          renderQuestion();
+        });
+
+        const letterSpan = document.createElement("span");
+        letterSpan.className = "letter";
+        letterSpan.textContent = letter;
+
+        const textSpan = document.createElement("span");
+        textSpan.className = "answer-text";
+        textSpan.textContent = q.options[letter];
+
+        label.appendChild(input);
+        label.appendChild(letterSpan);
+        label.appendChild(textSpan);
+        answersEl.appendChild(label);
+      });
+
+      if (isChecked) {
+        const selected = selectedAnswers[q.number];
+        const correctText = q.options[q.correct];
+        if (selected === q.correct) {
+          feedbackBox.className = "feedback good";
+          feedbackBox.innerHTML = `<strong>Correct.</strong> Tačan odgovor je ${q.correct} — ${escapeHtml(correctText)}`;
+        } else {
+          feedbackBox.className = "feedback bad";
+          feedbackBox.innerHTML = `<strong>Wrong.</strong> Tačan odgovor je ${q.correct} — ${escapeHtml(correctText)}`;
+        }
+      }
+
+      checkBtn.classList.toggle("hidden", !hasSelection || isChecked);
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.classList.toggle("hidden", currentIndex === testQuestions.length - 1);
+      finishBtn.classList.toggle("hidden", currentIndex !== testQuestions.length - 1);
+      progressText.textContent = `Pitanje ${currentIndex + 1} od ${testQuestions.length}`;
+      questionSelect.value = currentIndex;
+      updateProgress();
+    }
+
+    function checkCurrentAnswer() {
+      const q = testQuestions[currentIndex];
+      if (!selectedAnswers[q.number]) return;
+
+      checkedAnswers[q.number] = true;
+      saveState();
+      populateSelect();
+      renderQuestion();
+    }
+
+    function finishTest() {
+      const correct = testQuestions.filter(q => selectedAnswers[q.number] === q.correct).length;
+      const percentage = Math.round((correct / testQuestions.length) * 100);
+      const unanswered = testQuestions.filter(q => !selectedAnswers[q.number]).length;
+      const unchecked = testQuestions.filter(q => selectedAnswers[q.number] && !checkedAnswers[q.number]).length;
+
+      scoreText.textContent = `${correct} / ${testQuestions.length} (${percentage}%)`;
+      scoreText.className = percentage >= 80 ? "score good" : "score bad";
+
+      const notes = [];
+      if (unanswered > 0) notes.push(`${unanswered} pitanja nisu odgovorena`);
+      if (unchecked > 0) notes.push(`${unchecked} odabranih odgovora nije provjereno`);
+      scoreSummary.textContent = notes.length
+        ? `${notes.join(" · ")}. Neodgovorena pitanja se računaju kao netačna.`
+        : "Odgovorio/la si i provjerio/la sva pitanja.";
+
+      testPanel.classList.add("hidden");
+      resultsPanel.style.display = "block";
+      renderReview();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function renderReview() {
+      review.innerHTML = "";
+      const items = testQuestions.filter(q => showAllReview || selectedAnswers[q.number] !== q.correct);
+
+      if (items.length === 0) {
+        const div = document.createElement("div");
+        div.className = "review-item correct";
+        div.innerHTML = "<div class='review-title'>Sve tačno 🎉</div><div class='small'>Nema netačnih odgovora.</div>";
+        review.appendChild(div);
+        return;
+      }
+
+      items.forEach((q, idx) => {
+        const userAnswer = selectedAnswers[q.number] || "Nije odgovoreno";
+        const isCorrect = userAnswer === q.correct;
+        const div = document.createElement("div");
+        div.className = `review-item ${isCorrect ? "correct" : "wrong"}`;
+
+        const userText = selectedAnswers[q.number] ? q.options[selectedAnswers[q.number]] : "—";
+        const correctText = q.options[q.correct];
+
+        div.innerHTML = `
+          <div class="review-title">Test pitanje ${testQuestions.indexOf(q) + 1} · Originalno #${q.number}: ${escapeHtml(q.question)}</div>
+          <div class="small"><strong>Tvoj odgovor:</strong> ${escapeHtml(userAnswer)} — ${escapeHtml(userText)}</div>
+          <div class="small"><strong>Tačan odgovor:</strong> ${escapeHtml(q.correct)} — ${escapeHtml(correctText)}</div>
+        `;
+        review.appendChild(div);
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    quickChoices.addEventListener("click", (event) => {
+      const card = event.target.closest(".choice-card");
+      if (!card) return;
+      document.querySelectorAll(".choice-card").forEach(el => el.classList.remove("active"));
+      card.classList.add("active");
+      selectedCount = clampCount(card.dataset.count);
+      customCount.value = selectedCount;
+    });
+
+    customCount.addEventListener("input", () => {
+      selectedCount = clampCount(customCount.value);
+      document.querySelectorAll(".choice-card").forEach(el => {
+        el.classList.toggle("active", Number(el.dataset.count) === selectedCount);
+      });
+    });
+
+    startBtn.addEventListener("click", () => startNewTest(customCount.value));
+
+    checkBtn.addEventListener("click", checkCurrentAnswer);
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        saveState();
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < testQuestions.length - 1) {
+        currentIndex++;
+        saveState();
+        renderQuestion();
+      }
+    });
+
+    finishBtn.addEventListener("click", finishTest);
+
+    questionSelect.addEventListener("change", (e) => {
+      currentIndex = Number(e.target.value);
+      saveState();
+      renderQuestion();
+    });
+
+    backToTestBtn.addEventListener("click", () => {
+      resultsPanel.style.display = "none";
+      testPanel.classList.remove("hidden");
+      renderQuestion();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    resetBtn.addEventListener("click", () => {
+      const confirmed = confirm("Da li želiš obrisati odgovore za ovaj test i početi ga ispočetka sa istim pitanjima?");
+      if (!confirmed) return;
+      selectedAnswers = {};
+      checkedAnswers = {};
+      currentIndex = 0;
+      showAllReview = false;
+      saveState();
+      resultsPanel.style.display = "none";
+      testPanel.classList.remove("hidden");
+      populateSelect();
+      renderQuestion();
+    });
+
+    newRandomBtn.addEventListener("click", () => {
+      const confirmed = confirm("Pokrenuti novi random test? Trenutni odgovori će biti obrisani.");
+      if (!confirmed) return;
+      clearState();
+      resultsPanel.style.display = "none";
+      startPanel.classList.remove("hidden");
+      testPanel.classList.add("hidden");
+      answeredBadge.textContent = "Nije započeto";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    toggleReviewBtn.addEventListener("click", () => {
+      showAllReview = !showAllReview;
+      toggleReviewBtn.textContent = showAllReview ? "Show only wrong/unanswered" : "Show all";
+      renderReview();
+    });
+
+    // Resume existing test if one exists.
+    if (loadState()) {
+      startPanel.classList.add("hidden");
+      testPanel.classList.remove("hidden");
+      populateSelect();
+      renderQuestion();
+    }
+  </script>
+</body>
+</html>
