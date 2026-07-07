@@ -1,0 +1,17 @@
+{
+  "first_aid_questions": 100,
+  "driver_rules_questions": 450,
+  "road_signs_questions": 109,
+  "traffic_situations_questions": 110,
+  "traffic_situations_multiple_correct": 19,
+  "road_signs_multiple_correct": 20,
+  "validated_fix": {
+    "category": "Saobraćajne situacije / Oblast III",
+    "question": 98,
+    "correct": [
+      "1",
+      "4"
+    ]
+  },
+  "extraction_method_note": "Road-sign and traffic-situation PDFs were extracted using vector-drawn X marks in the PDF instead of pixel guessing."
+}

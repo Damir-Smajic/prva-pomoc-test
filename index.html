@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="bs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neira testovi</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <h1>Neira testovi</h1>
+        <p class="subtitle">Izaberi kategoriju, broj pitanja i kreni. Pitanja se svaki put miješaju nasumično.</p>
+      </div>
+      <div class="badge" id="answeredBadge">Nije započeto</div>
+    </header>
+
+    <section class="panel start-panel" id="startPanel">
+      <h2>1. Izaberi kategoriju</h2>
+      <div class="category-grid" id="categoryGrid"></div>
+
+      <h2>2. Koliko pitanja želiš?</h2>
+      <p class="subtitle">Možeš izabrati brzu opciju ili upisati svoj broj.</p>
+      <div class="start-grid" id="quickChoices">
+        <button class="choice-card" data-count="10">10</button>
+        <button class="choice-card active" data-count="20">20</button>
+        <button class="choice-card" data-count="30">30</button>
+        <button class="choice-card" data-count="50">50</button>
+        <button class="choice-card" data-count="100">100</button>
+      </div>
+      <div class="custom-row">
+        <label for="customCount">Custom broj pitanja:</label>
+        <input id="customCount" type="number" min="1" max="100" value="20" />
+      </div>
+      <div class="resume-box" id="resumeBox">
+        <strong>Imaš sačuvan test u toku.</strong>
+        <div>Možeš nastaviti gdje si stala ili pokrenuti potpuno novi random test.</div>
+        <div class="resume-actions">
+          <button class="btn-secondary" id="resumeBtn">Resume current test</button>
+          <button class="btn-warning" id="discardSavedBtn">Discard saved test</button>
+        </div>
+      </div>
+      <button class="btn-primary" id="startBtn">Start random test</button>
+    </section>
+
+    <section class="panel hidden" id="testPanel">
+      <div class="exit-row"><button class="btn-danger" id="exitTestBtn">Exit current test</button></div>
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span id="progressText">Pitanje 1</span>
+          <span id="activeTestLabel"></span>
+        </div>
+        <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+      <div class="card">
+        <div class="question-number" id="questionNumber"></div>
+        <h2 class="question" id="questionText"></h2>
+        <div class="question-image-wrap hidden" id="questionImageWrap"><img id="questionImage" alt="Slika uz pitanje" /></div>
+        <div class="multi-note hidden" id="multiNote">Ovo pitanje ima više tačnih odgovora. Označi sve tačne odgovore.</div>
+        <div class="answers" id="answers"></div>
+        <div class="feedback" id="feedbackBox"></div>
+      </div>
+      <div class="nav">
+        <button class="btn-secondary" id="prevBtn">← Previous</button>
+        <div class="middle-actions">
+          <button class="btn-good hidden" id="checkBtn">Check answer</button>
+          <div class="jump"><label for="questionSelect">Jump to:</label><select id="questionSelect"></select></div>
+        </div>
+        <button class="btn-secondary" id="nextBtn">Next →</button>
+        <button class="btn-primary hidden" id="finishBtn">Finish test</button>
+      </div>
+    </section>
+
+    <section class="panel results" id="resultsPanel">
+      <div class="score-card">
+        <p class="small">Rezultat</p>
+        <p class="score" id="scoreText"></p>
+        <p id="scoreSummary"></p>
+        <button class="btn-secondary" id="backToTestBtn">Back to test</button>
+        <button class="btn-primary" id="newRandomBtn">New random test</button>
+        <button class="btn-warning" id="resetBtn">Reset this test</button>
+      </div>
+      <h2>Pregled odgovora</h2>
+      <p class="small">Prikazana su netačna i neodgovorena pitanja. Za kompletan pregled klikni “Show all”.</p>
+      <button class="btn-secondary" id="toggleReviewBtn">Show all</button>
+      <div class="review" id="review"></div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="answerModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="result-modal">
+      <div class="modal-header" id="modalHeader">
+        <div class="modal-header-inner">
+          <button class="modal-close-x" id="modalCloseX" aria-label="Close result modal">×</button>
+          <div class="modal-kicker" id="modalKicker">Rezultat odgovora</div>
+          <h2 class="modal-title" id="modalTitle">Correct!</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-answer-box"><span class="modal-answer-label">Tačan odgovor</span><div id="modalCorrectAnswer"></div></div>
+        <p class="modal-message" id="modalMessage"></p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-secondary" id="modalCloseBtn">Close</button>
+        <button class="btn-primary" id="modalNextBtn">Next question</button>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
