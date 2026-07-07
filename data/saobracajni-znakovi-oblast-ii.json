@@ -1024,7 +1024,7 @@
     "question": "Koje značenje ima ovaj saobraćajni znak?",
     "image": "assets/signs/q067.webp",
     "options": {
-      "1": "zabranu saobraćaja za vozila koja na točkovima koriste",
+      "1": "zabranu saobraćaja za vozila koja na točkovima koriste lance",
       "2": "označava početak dijela puta na kome motorna vozila, osim motocikla moraju imati propisanu zimsku opremu u zimskim uslovima."
     },
     "correct": [
