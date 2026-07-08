@@ -1,0 +1,1774 @@
+[
+  {
+    "id": "traffic-situations-1",
+    "number": 1,
+    "source": "traffic-situations",
+    "question": "U saobraćajnoj situaciji kao na slici kojom putanjom vozač motocikla mora izvršiti radnju skretanja ulijevo?",
+    "image": "assets/situations/q001.webp",
+    "options": {
+      "1": "putanjom broj 2;",
+      "2": "putanjom broj 1."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 1
+  },
+  {
+    "id": "traffic-situations-2",
+    "number": 2,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q002.webp",
+    "options": {
+      "1": "2 – 3 – 1;",
+      "2": "2 – 1 – 3;",
+      "3": "1 – 3 – 2."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 1
+  },
+  {
+    "id": "traffic-situations-3",
+    "number": 3,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q003.webp",
+    "options": {
+      "1": "1 – 2;",
+      "2": "2 – 1."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 1
+  },
+  {
+    "id": "traffic-situations-4",
+    "number": 4,
+    "source": "traffic-situations",
+    "question": "Kako u saobraćajnoj situaciji kao na slici mora postupiti vozač vozila broj 1:",
+    "image": "assets/situations/q004.webp",
+    "options": {
+      "1": "propustiti vozilo broj 3, a zatim proći prije vozila broj 2;",
+      "2": "propustiti vozilo broj 3, zatim propustiti vozilo broj 2 i zadnji proći kroz raskrsnicu."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 1
+  },
+  {
+    "id": "traffic-situations-5",
+    "number": 5,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q005.webp",
+    "options": {
+      "1": "2 – 3 – 4 – 1;",
+      "2": "2 – 3 – 1 – 4;",
+      "3": "1 – 2 – 3 – 4."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 1
+  },
+  {
+    "id": "traffic-situations-6",
+    "number": 6,
+    "source": "traffic-situations",
+    "question": "Kako u saobraćajnoj situaciji kao na slici mora postupiti vozač vozila broj 1?",
+    "image": "assets/situations/q006.webp",
+    "options": {
+      "1": "proći kroz raskrsnicu prije vozila broj 2, a propustiti vozilo broj 3;",
+      "2": "propustiti vozilo broj 2, a zatim proći kroz raskrsnicu prije vozila broj 3."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 2
+  },
+  {
+    "id": "traffic-situations-7",
+    "number": 7,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q007.webp",
+    "options": {
+      "1": "3 – 1 – 2 – 4;",
+      "2": "4 – 2 – 1 – 3;",
+      "3": "3 – 4 – 2 – 1."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 2
+  },
+  {
+    "id": "traffic-situations-8",
+    "number": 8,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q008.webp",
+    "options": {
+      "1": "2 – 3 – 1;",
+      "2": "2 – 1 – 3;",
+      "3": "3 – 1 – 2."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 2
+  },
+  {
+    "id": "traffic-situations-9",
+    "number": 9,
+    "source": "traffic-situations",
+    "question": "Da li je u saobraćajnoj situaciji kao na slici dozvoljeno izvršiti radnju polukružnog okretanja vozilom?",
+    "image": "assets/situations/q009.webp",
+    "options": {
+      "1": "da;",
+      "2": "ne."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 2
+  },
+  {
+    "id": "traffic-situations-10",
+    "number": 10,
+    "source": "traffic-situations",
+    "question": "U saobraćajnoj situaciji kao na slici, koji učesnik u saobraćaju mora sačekati i propustiti drugog učesnika?",
+    "image": "assets/situations/q010.webp",
+    "options": {
+      "1": "broj 2;",
+      "2": "broj 1."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 2
+  },
+  {
+    "id": "traffic-situations-11",
+    "number": 11,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q011.webp",
+    "options": {
+      "1": "5 – 4 – 3 – 2 – 1;",
+      "2": "1 – 2 – 3 – 4 – 5;"
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 3
+  },
+  {
+    "id": "traffic-situations-12",
+    "number": 12,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q012.webp",
+    "options": {
+      "1": "2 – 3 – 1;",
+      "2": "1 – 2 – 3;",
+      "3": "3 – 1 – 2."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 3
+  },
+  {
+    "id": "traffic-situations-13",
+    "number": 13,
+    "source": "traffic-situations",
+    "question": "Kojim vozilima u saobraćajnoj situaciji kao na slici nije dozvoljen prolaz na raskrsnici?",
+    "image": "assets/situations/q013.webp",
+    "options": {
+      "1": "vozilo broj 1 i broj 3;",
+      "2": "vozilo broj 4 i broj 2."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 3
+  },
+  {
+    "id": "traffic-situations-14",
+    "number": 14,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q014.webp",
+    "options": {
+      "1": "4 – 3 – 1 – 2;",
+      "2": "3 – 4 – 1 – 2;",
+      "3": "4 – 3 – 2 – 1."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 3
+  },
+  {
+    "id": "traffic-situations-15",
+    "number": 15,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q015.webp",
+    "options": {
+      "1": "1 – 2 – 3;",
+      "2": "2 – 3 – 1;",
+      "3": "3 – 1 – 2."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 3
+  },
+  {
+    "id": "traffic-situations-16",
+    "number": 16,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q016.webp",
+    "options": {
+      "1": "2 – 3 – 1;",
+      "2": "3 – 1 – 2;",
+      "3": "1 – 3 – 2."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 4
+  },
+  {
+    "id": "traffic-situations-17",
+    "number": 17,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q017.webp",
+    "options": {
+      "1": "1 – 2 – 3;",
+      "2": "3 – 2 – 1;",
+      "3": "2 – 1 – 3."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 4
+  },
+  {
+    "id": "traffic-situations-18",
+    "number": 18,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q018.webp",
+    "options": {
+      "1": "1 – 3 – 2;",
+      "2": "2 – 3 – 1;",
+      "3": "2 – 1 – 3."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 4
+  },
+  {
+    "id": "traffic-situations-19",
+    "number": 19,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q019.webp",
+    "options": {
+      "1": "1 – 3 – 2 – 4;",
+      "2": "3 – 2 – 1 – 4;",
+      "3": "3 – 1 – 2 – 4;",
+      "4": "1 – 4 – 2 – 3."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 4
+  },
+  {
+    "id": "traffic-situations-20",
+    "number": 20,
+    "source": "traffic-situations",
+    "question": "Kako u saobraćajnoj situaciji kao na slici mora postupiti vozač vozila broj 2?",
+    "image": "assets/situations/q020.webp",
+    "options": {
+      "1": "zaustaviti se i propustiti vozilo broj 1;",
+      "2": "proći prije vozila broj 1."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 4
+  },
+  {
+    "id": "traffic-situations-21",
+    "number": 21,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q021.webp",
+    "options": {
+      "1": "2 – 1 – 3;",
+      "2": "3 – 1 – 2;",
+      "3": "1 – 2 – 3."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 5
+  },
+  {
+    "id": "traffic-situations-22",
+    "number": 22,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q022.webp",
+    "options": {
+      "1": "1 – 2 – 3;",
+      "2": "1 – 3 – 2;",
+      "3": "3 – 1 – 2."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 5
+  },
+  {
+    "id": "traffic-situations-23",
+    "number": 23,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q023.webp",
+    "options": {
+      "1": "2 – 1 – 3;",
+      "2": "1 – 3 – 2;",
+      "3": "3 – 2 – 1."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 5
+  },
+  {
+    "id": "traffic-situations-24",
+    "number": 24,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q024.webp",
+    "options": {
+      "1": "3 – 2 – 1;",
+      "2": "1 – 2 – 3;",
+      "3": "1 – 3 – 2."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 5
+  },
+  {
+    "id": "traffic-situations-25",
+    "number": 25,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q025.webp",
+    "options": {
+      "1": "1 – 2 – 3;",
+      "2": "2 – 1 – 3;",
+      "3": "3 – 1 – 2."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 5
+  },
+  {
+    "id": "traffic-situations-26",
+    "number": 26,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q026.webp",
+    "options": {
+      "1": "2 – 1 – 3;",
+      "2": "3 – 2 – 1;",
+      "3": "1 – 3 – 2."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 6
+  },
+  {
+    "id": "traffic-situations-27",
+    "number": 27,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q027.webp",
+    "options": {
+      "1": "1 – 2 – 3;",
+      "2": "2 – 1 – 3;",
+      "3": "3 – 1 – 2."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 6
+  },
+  {
+    "id": "traffic-situations-28",
+    "number": 28,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q028.webp",
+    "options": {
+      "1": "3 – 2 – 1;",
+      "2": "2 – 1 – 3;",
+      "3": "1 – 3 – 2."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 6
+  },
+  {
+    "id": "traffic-situations-29",
+    "number": 29,
+    "source": "traffic-situations",
+    "question": "Kako u saobraćajnoj situaciji kao na slici mora postupiti vozač vozila broj 2?",
+    "image": "assets/situations/q029.webp",
+    "options": {
+      "1": "propustiti vozilo broj 1;",
+      "2": "proći prije vozila broj 1."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 6
+  },
+  {
+    "id": "traffic-situations-30",
+    "number": 30,
+    "source": "traffic-situations",
+    "question": "Kako u saobraćajnoj situaciji kao na slici mora postupiti vozač vozila broj 2?",
+    "image": "assets/situations/q030.webp",
+    "options": {
+      "1": "proći prije vozila broj 1;",
+      "2": "propustiti vozilo broj 1."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 6
+  },
+  {
+    "id": "traffic-situations-31",
+    "number": 31,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q031.webp",
+    "options": {
+      "1": "2 – 1 – 3;",
+      "2": "3 – 1 – 2;",
+      "3": "3 – 2 – 1."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 7
+  },
+  {
+    "id": "traffic-situations-32",
+    "number": 32,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q032.webp",
+    "options": {
+      "1": "1 – 2 – 3 – 4;",
+      "2": "4 – 1 – 2 – 3;",
+      "3": "2 – 3 – 4 – 1."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 7
+  },
+  {
+    "id": "traffic-situations-33",
+    "number": 33,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q033.webp",
+    "options": {
+      "1": "3 – 1 – 2;",
+      "2": "2 – 1 – 3;",
+      "3": "1 – 2 – 3."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 7
+  },
+  {
+    "id": "traffic-situations-34",
+    "number": 34,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q034.webp",
+    "options": {
+      "1": "3 – 2 – 1;",
+      "2": "1 – 2 – 3;",
+      "3": "2 – 1 – 3."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 7
+  },
+  {
+    "id": "traffic-situations-35",
+    "number": 35,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q035.webp",
+    "options": {
+      "1": "1 – 3 – 2;",
+      "2": "2 – 3 – 1;",
+      "3": "3 – 2 – 1."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 7
+  },
+  {
+    "id": "traffic-situations-36",
+    "number": 36,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q036.webp",
+    "options": {
+      "1": "2 – 3 – 1;",
+      "2": "3 – 2 – 1;",
+      "3": "3 – 1 – 2."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 8
+  },
+  {
+    "id": "traffic-situations-37",
+    "number": 37,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q037.webp",
+    "options": {
+      "1": "3 – 2 – 1;",
+      "2": "1 – 2 – 3;",
+      "3": "2 – 1 – 3."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 8
+  },
+  {
+    "id": "traffic-situations-38",
+    "number": 38,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q038.webp",
+    "options": {
+      "1": "3 – 2 – 1;",
+      "2": "2 – 3 – 1;",
+      "3": "1 – 2 – 3."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 8
+  },
+  {
+    "id": "traffic-situations-39",
+    "number": 39,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q039.webp",
+    "options": {
+      "1": "2 – 3 – 1;",
+      "2": "1 – 3 – 2;",
+      "3": "1 – 2 – 3."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 8
+  },
+  {
+    "id": "traffic-situations-40",
+    "number": 40,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q040.webp",
+    "options": {
+      "1": "3 – 2 – 1;",
+      "2": "2 – 1 – 3;",
+      "3": "1 – 2 – 3."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 8
+  },
+  {
+    "id": "traffic-situations-41",
+    "number": 41,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q041.webp",
+    "options": {
+      "1": "2 – 3 – 1;",
+      "2": "1 – 3 – 2;",
+      "3": "2 – 1 – 3."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 9
+  },
+  {
+    "id": "traffic-situations-42",
+    "number": 42,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q042.webp",
+    "options": {
+      "1": "3 – 2 – 1;",
+      "2": "3 – 1 – 2;",
+      "3": "1 – 2 – 3."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 9
+  },
+  {
+    "id": "traffic-situations-43",
+    "number": 43,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q043.webp",
+    "options": {
+      "1": "1 – 2 – 3;",
+      "2": "3 – 1 – 2;",
+      "3": "2 – 1 – 3."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 9
+  },
+  {
+    "id": "traffic-situations-44",
+    "number": 44,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q044.webp",
+    "options": {
+      "1": "3 – 2 – 1;",
+      "2": "2 – 1 – 3;",
+      "3": "1 – 2 – 3."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 9
+  },
+  {
+    "id": "traffic-situations-45",
+    "number": 45,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q045.webp",
+    "options": {
+      "1": "3 – 2 – 1;",
+      "2": "2 – 1 – 3;",
+      "3": "1 – 3 – 2."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 9
+  },
+  {
+    "id": "traffic-situations-46",
+    "number": 46,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q046.webp",
+    "options": {
+      "1": "3 – 1 – 2;",
+      "2": "2 – 1 – 3;",
+      "3": "1 – 3 – 2."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 10
+  },
+  {
+    "id": "traffic-situations-47",
+    "number": 47,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q047.webp",
+    "options": {
+      "1": "2 – 1 – 3;",
+      "2": "3 – 2 – 1;",
+      "3": "1 – 3 – 2."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 10
+  },
+  {
+    "id": "traffic-situations-48",
+    "number": 48,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q048.webp",
+    "options": {
+      "1": "1 – 2 – 3;",
+      "2": "2 – 3 – 1;",
+      "3": "3 – 2 – 1."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 10
+  },
+  {
+    "id": "traffic-situations-49",
+    "number": 49,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q049.webp",
+    "options": {
+      "1": "2 – 1 – 3 – 4;",
+      "2": "1 – 2 – 3 – 4;",
+      "3": "1 – 2 – 4 – 3."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 10
+  },
+  {
+    "id": "traffic-situations-50",
+    "number": 50,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q050.webp",
+    "options": {
+      "1": "1 – 3 – 2;",
+      "2": "3 – 2 – 1;",
+      "3": "2 – 3 – 1."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 10
+  },
+  {
+    "id": "traffic-situations-51",
+    "number": 51,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q051.webp",
+    "options": {
+      "1": "2 – 3 – 1;",
+      "2": "2 – 1 – 3;",
+      "3": "3 – 1 – 2."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 11
+  },
+  {
+    "id": "traffic-situations-52",
+    "number": 52,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q052.webp",
+    "options": {
+      "1": "1 – 3 – 2;",
+      "2": "3 pa 2 i 1 istovremeno;",
+      "3": "2 i 1 istovremeno pa 3."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 11
+  },
+  {
+    "id": "traffic-situations-53",
+    "number": 53,
+    "source": "traffic-situations",
+    "question": "Da li je u saobraćajnoj situaciji kao na slici dozvoljeno izvršiti radnju polukružnog okretanja vozilom kojim upravljate?",
+    "image": "assets/situations/q053.webp",
+    "options": {
+      "1": "da;",
+      "2": "ne."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 11
+  },
+  {
+    "id": "traffic-situations-54",
+    "number": 54,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q054.webp",
+    "options": {
+      "1": "1 – 3 – 2;",
+      "2": "1 – 2 – 3;",
+      "3": "3 – 1 – 2."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 11
+  },
+  {
+    "id": "traffic-situations-55",
+    "number": 55,
+    "source": "traffic-situations",
+    "question": "Redoslijed prolaska na raskrsnici je:",
+    "image": "assets/situations/q055.webp",
+    "options": {
+      "1": "1 – 3 – 2;",
+      "2": "3 – 1 – 2;",
+      "3": "2 – 3 – 1."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 11
+  },
+  {
+    "id": "traffic-situations-56",
+    "number": 56,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q056.webp",
+    "options": {
+      "1": "4 – 1 – 2 – 3;",
+      "2": "2 – 3 – 4 – 1;",
+      "3": "2 – 3 – 1 – 4."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 12
+  },
+  {
+    "id": "traffic-situations-57",
+    "number": 57,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q057.webp",
+    "options": {
+      "1": "3 – 2 – 1;",
+      "2": "3 – 1 – 2;",
+      "3": "2 – 3 – 1."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 12
+  },
+  {
+    "id": "traffic-situations-58",
+    "number": 58,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti na raskrsnici na kojoj je saobraćaj regulisan svjetlosnom saobraćajnom signalizacijom kao na slici?",
+    "image": "assets/situations/q058.webp",
+    "options": {
+      "1": "obavezno zaustaviti vozilo jer se uključujem sa sporednog puta;",
+      "2": "obavezno zaustaviti vozilo zbog znaka „STOP“;",
+      "3": "nastaviti kretanje vozilom."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 12
+  },
+  {
+    "id": "traffic-situations-59",
+    "number": 59,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti na raskrsnici u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q059.webp",
+    "options": {
+      "1": "nastaviti kretanje vozilom jer nema niko sa desne strane;",
+      "2": "proći drugi jer ste žutom vozilu sa desne strane;",
+      "3": "zaustaviti se i propustiti oba vozila;"
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 12
+  },
+  {
+    "id": "traffic-situations-60",
+    "number": 60,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti na raskrsnici u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q060.webp",
+    "options": {
+      "1": "proći prvi kroz raskrsnicu;",
+      "2": "propustiti crveno vozilo;",
+      "3": "zaustaviti se i propustiti oba vozila;",
+      "4": "proći kroz raskrsnicu prije žutog vozila."
+    },
+    "correct": [
+      "2",
+      "4"
+    ],
+    "page": 12
+  },
+  {
+    "id": "traffic-situations-61",
+    "number": 61,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici ako upravljate plavim automobilom?",
+    "image": "assets/situations/q061.webp",
+    "options": {
+      "1": "proći prvi jer sam sa desne strane;",
+      "2": "proći prvi jer skrećem udesno;",
+      "3": "zaustaviti se i propustiti crveno vozilo."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 13
+  },
+  {
+    "id": "traffic-situations-62",
+    "number": 62,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici ako imate namjeru proći raskrsnicu?",
+    "image": "assets/situations/q062.webp",
+    "options": {
+      "1": "obavezno se zaustaviti, bez obzira ima li vozila sa lijeve strane u raskrsnici;",
+      "2": "nastaviti kretanje bez zaustavljanja jer me vozači vozila u raskrsnici moraju propustiti;",
+      "3": "zaustaviti se po potrebi, radi propuštanja vozila koja su već u raskrsnici, a potom proći kroz raskrsnicu."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 13
+  },
+  {
+    "id": "traffic-situations-63",
+    "number": 63,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici prilikom dolaska na raskrsnicu?",
+    "image": "assets/situations/q063.webp",
+    "options": {
+      "1": "nastaviti kretanje jer ne mijenjam smjer kretanja vozila;",
+      "2": "propustiti motocikl;",
+      "3": "proći prije vozila koje dolazi iz suprotnog smjera."
+    },
+    "correct": [
+      "2",
+      "3"
+    ],
+    "page": 13
+  },
+  {
+    "id": "traffic-situations-64",
+    "number": 64,
+    "source": "traffic-situations",
+    "question": "Kako trebate postupiti u saobraćajnoj situaciji kao na slici prilikom dolaska na raskrsnicu?",
+    "image": "assets/situations/q064.webp",
+    "options": {
+      "1": "proći prvi kroz raskrsnicu;",
+      "2": "proći drugi kroz raskrsnicu, nakon propuštanja bijelog vozila;",
+      "3": "proći posljednji kroz raskrsnicu."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 13
+  },
+  {
+    "id": "traffic-situations-65",
+    "number": 65,
+    "source": "traffic-situations",
+    "question": "Kako trebate postupiti u saobraćajnoj situaciji kao na slici prilikom dolaska na raskrsnicu?",
+    "image": "assets/situations/q065.webp",
+    "options": {
+      "1": "zaustaviti se i propustiti oba vozila;",
+      "2": "proći prvi kroz raskrsnicu jer sam crvenom vozilu sa desne strane;",
+      "3": "propustiti crveno vozilo, a zatim proći kroz raskrsnicu istovremeno sa autobusom."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 13
+  },
+  {
+    "id": "traffic-situations-66",
+    "number": 66,
+    "source": "traffic-situations",
+    "question": "Kako trebate postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q066.webp",
+    "options": {
+      "1": "obavezno se zaustaviti;",
+      "2": "nastaviti kretanje vozilom ulijevo, nakon propuštanja vozila koja dolaze sa desne strane;",
+      "3": "nakon što se na semaforu upali zeleno svjetlo, nastaviti kretanje vozilom ulijevo;",
+      "4": "nakon što se na semaforu upali zeleno svjetlo, nastaviti kretanje udesno."
+    },
+    "correct": [
+      "1",
+      "3"
+    ],
+    "page": 14
+  },
+  {
+    "id": "traffic-situations-67",
+    "number": 67,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q067.webp",
+    "options": {
+      "1": "povećati pažnju zbog nailaska na ukrštanje odnosno spajanje puta sa prednošću prolaska sa sporednim putem;",
+      "2": "obavezno nastaviti kretanje vozilom pravo;",
+      "3": "skrenuti udesno na sporedni put ili nastaviti kretanje vozilom pravo."
+    },
+    "correct": [
+      "1",
+      "2"
+    ],
+    "page": 14
+  },
+  {
+    "id": "traffic-situations-68",
+    "number": 68,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q068.webp",
+    "options": {
+      "1": "obratiti pažnju na moguću djecu na putu ili u blizini puta, a brzinu kretanja vozila prilagoditi trenutnim uslovima saobraćaja, s tim da brzina ne smije biti veća od brzine određene saobraćajnim znakom;",
+      "2": "obratiti pažnju samo ako se djeca nalaze na putu, a brzinu prilagoditi trenutnim uslovima saobraćaja."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 14
+  },
+  {
+    "id": "traffic-situations-69",
+    "number": 69,
+    "source": "traffic-situations",
+    "question": "Kako treba postupiti vozač motocikla u saobraćajnoj situaciji kao na slici, ako je na vozilu javnog gradskog prevoza putnika uključen lijevi pokazivač smjera?",
+    "image": "assets/situations/q069.webp",
+    "options": {
+      "1": "nije dužan omogućiti autobusu uključivanje u saobraćaj;",
+      "2": "dužan je omogućiti autobusu uključivanje u saobraćaj;",
+      "3": "nije dužan omogućiti autobusu uključivanje u saobraćaj jer se autobus nalazi na sporednom putu."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 14
+  },
+  {
+    "id": "traffic-situations-70",
+    "number": 70,
+    "source": "traffic-situations",
+    "question": "U saobraćajnoj situaciji kao na slici vozač putničkog automobila:",
+    "image": "assets/situations/q070.webp",
+    "options": {
+      "1": "ne smije da izvrši radnju kretanja vozilom unazad, jer čini prekršaj;",
+      "2": "smije izvršiti radnju kretanja vozilom unazad, jer se nalazi neposredno uz mjesto za zaustavljanje vozila."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 14
+  },
+  {
+    "id": "traffic-situations-71",
+    "number": 71,
+    "source": "traffic-situations",
+    "question": "U saobraćajnoj situaciji kao na slici, vozač kamiona prilikom vršenja radnje kretanja vozilom unazad mora da se kreće:",
+    "image": "assets/situations/q071.webp",
+    "options": {
+      "1": "linijama broj 1 i broj 2;",
+      "2": "linijom broj 2;",
+      "3": "linijom broj 1."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 15
+  },
+  {
+    "id": "traffic-situations-72",
+    "number": 72,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q072.webp",
+    "options": {
+      "1": "autobus, kamion, motocikl;",
+      "2": "motocikl, autobus, kamion;",
+      "3": "motocikl i kamion istovremeno, pa autobus;",
+      "4": "motocikl, kamion, autobus."
+    },
+    "correct": [
+      "4"
+    ],
+    "page": 15
+  },
+  {
+    "id": "traffic-situations-73",
+    "number": 73,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q073.webp",
+    "options": {
+      "1": "tramvaj, motocikl, putnički automobil;",
+      "2": "tramvaj pa istovremeno putnički automobil i motocikl;",
+      "3": "motocikl, putnički automobil, tramvaj;",
+      "4": "motocikl, tramvaj, putnički automobil."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 15
+  },
+  {
+    "id": "traffic-situations-74",
+    "number": 74,
+    "source": "traffic-situations",
+    "question": "Koje vozilo će u saobraćajnoj situaciji kao na slici posljednje proći kroz raskrsnicu?",
+    "image": "assets/situations/q074.webp",
+    "options": {
+      "1": "motocikl;",
+      "2": "policijsko vozilo koje drugom policijskom vozilu dolazi sa desne strane;",
+      "3": "policijsko vozilo koje se nalazi na putu s prvenstvom prolaza"
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 15
+  },
+  {
+    "id": "traffic-situations-75",
+    "number": 75,
+    "source": "traffic-situations",
+    "question": "Kojoj vrsti saobraćajnih znakova pripada postavljeni saobraćajni znak na slici?",
+    "image": "assets/situations/q075.webp",
+    "options": {
+      "1": "znakovima opasnosti;",
+      "2": "znakovima obavještenja;",
+      "3": "znakovima izričitih naredbi."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 15
+  },
+  {
+    "id": "traffic-situations-76",
+    "number": 76,
+    "source": "traffic-situations",
+    "question": "Kako treba postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q076.webp",
+    "options": {
+      "1": "obavezno se zaustaviti pa nastaviti kretanje vozilom ulijevo ili udesno;",
+      "2": "nastaviti kretanje vozilom nakon propuštanja vozila koja dolaze samo sa desne strane;",
+      "3": "nastaviti kretanje vozilom ulijevo ili udesno nakon propuštanja svih vozila koja se kreću putem na koji se uključujem."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 16
+  },
+  {
+    "id": "traffic-situations-77",
+    "number": 77,
+    "source": "traffic-situations",
+    "question": "Kako treba postupiti u saobraćajnoj situaciji kao na slici ako vozilom prolazite pored dva postavljena saobraćajna znaka?",
+    "image": "assets/situations/q077.webp",
+    "options": {
+      "1": "prilagoditi brzinu kretanja vozila tako da ona ne prelazi 50 km/h;",
+      "2": "obratiti pažnju na pješake, jer saobraćajni znak ukazuje na blizinu pješačkog prelaza;",
+      "3": "nastaviti kretanje vozilom uz prethodno propuštanje pješaka."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 16
+  },
+  {
+    "id": "traffic-situations-78",
+    "number": 78,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici ako kretanje vozilom nastavljate pravo, na raskrsnici puteva iste važnosti na kojoj uređaji za davanje svjetlosnih saobraćajnih znakova nisu u funkciji?",
+    "image": "assets/situations/q078.webp",
+    "options": {
+      "1": "pažljivo proći kroz raskrsnicu;",
+      "2": "propustiti vozila koja dolaze i sa lijeve i sa desne strane;",
+      "3": "propustiti vozila koja dolaze samo sa desne strane;",
+      "4": "propustiti vozila iz suprotnog smjera koja namjeravaju skrenuti lijevo."
+    },
+    "correct": [
+      "1",
+      "3"
+    ],
+    "page": 16
+  },
+  {
+    "id": "traffic-situations-79",
+    "number": 79,
+    "source": "traffic-situations",
+    "question": "U saobraćajnoj situaciji kao na slici učesnici u saobraćaju će proći kroz raskrsnicu sljedećim redoslijedom:",
+    "image": "assets/situations/q079.webp",
+    "options": {
+      "1": "oba bicikla, crveni automobil, zeleni automobil;",
+      "2": "zeleni automobil, crveni automobil, pa bicikli;",
+      "3": "oba bicikla, zeleni automobil, crveni automobil."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 16
+  },
+  {
+    "id": "traffic-situations-80",
+    "number": 80,
+    "source": "traffic-situations",
+    "question": "U saobraćajnoj situaciji kao na slici vozač vozila koje se nalazi u srednjoj saobraćajnoj traci:",
+    "image": "assets/situations/q080.webp",
+    "options": {
+      "1": "mora nastaviti kretanje vozilom pravo, jer nije pravovremeno izvršio radnju prestrojavanja;",
+      "2": "ne smije izvršiti radnju skretanja ulijevo, jer čini prekršaj;",
+      "3": "sačekaće sva vozila da skrenu ulijevo, a potom izvršiti radnju skretanja ulijevo."
+    },
+    "correct": [
+      "1",
+      "2"
+    ],
+    "page": 16
+  },
+  {
+    "id": "traffic-situations-81",
+    "number": 81,
+    "source": "traffic-situations",
+    "question": "U saobraćajnoj situaciji kao na slici, plavi putnički automobil:",
+    "image": "assets/situations/q081.webp",
+    "options": {
+      "1": "ne čini prekršaj jer je prelaz preko pruge regulisan svjetlosnim saobraćajnim znakovima;",
+      "2": "čini prekršaj;"
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 17
+  },
+  {
+    "id": "traffic-situations-82",
+    "number": 82,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici ukoliko automobilom skrećete udesno?",
+    "image": "assets/situations/q082.webp",
+    "options": {
+      "1": "propustiću biciklistu, a zatim vršim radnju skretanja udesno;",
+      "2": "voziti istovremeno s biciklistom."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 17
+  },
+  {
+    "id": "traffic-situations-83",
+    "number": 83,
+    "source": "traffic-situations",
+    "question": "Kako treba postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q083.webp",
+    "options": {
+      "1": "povećati brzinu kretanja vozila;",
+      "2": "obratiti pažnju na postupke vozača vozila iz suprotnog smjera;",
+      "3": "povećati pažnju i prije vozila iz suprotnog smjera proći dionicu na kojoj je suženje puta."
+    },
+    "correct": [
+      "2",
+      "3"
+    ],
+    "page": 17
+  },
+  {
+    "id": "traffic-situations-84",
+    "number": 84,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q084.webp",
+    "options": {
+      "1": "propustiti crveni automobil;",
+      "2": "proći kroz raskrsnicu prije crnog automobila;",
+      "3": "proći kroz raskrsnicu prije crvenog automobila."
+    },
+    "correct": [
+      "1",
+      "2"
+    ],
+    "page": 17
+  },
+  {
+    "id": "traffic-situations-85",
+    "number": 85,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q085.webp",
+    "options": {
+      "1": "propustiti autobus;",
+      "2": "propustiti motocikl;",
+      "3": "proći kroz raskrsnicu prije autobusa."
+    },
+    "correct": [
+      "2",
+      "3"
+    ],
+    "page": 17
+  },
+  {
+    "id": "traffic-situations-86",
+    "number": 86,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q086.webp",
+    "options": {
+      "1": "proći prvi kroz raskrsnicu;",
+      "2": "proći zadnji kroz raskrsnicu;",
+      "3": "proći prije crvenog vozila kroz raskrsnicu;",
+      "4": "propustiti vozilo koje dolazi iz suprotnog smjera."
+    },
+    "correct": [
+      "3",
+      "4"
+    ],
+    "page": 18
+  },
+  {
+    "id": "traffic-situations-87",
+    "number": 87,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q087.webp",
+    "options": {
+      "1": "1 – 2 – 3;",
+      "2": "2 – 3 – 1;",
+      "3": "3 – 1 – 2."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 18
+  },
+  {
+    "id": "traffic-situations-88",
+    "number": 88,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q088.webp",
+    "options": {
+      "1": "proći prvi kroz raskrsnicu jer imate prednost;",
+      "2": "propustiti oba vozila i zadnji proći kroz raskrsnicu;",
+      "3": "propustiti vozilo hitne pomoći koje daje svjetlosne znakove, a zatim proći kroz raskrsnicu."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 18
+  },
+  {
+    "id": "traffic-situations-89",
+    "number": 89,
+    "source": "traffic-situations",
+    "question": "Kako treba postupiti vozač putničkog automobila u saobraćajnoj situaciji kao na slici ako se vozač autobusa uključuje u saobraćaj sa stajališta?",
+    "image": "assets/situations/q089.webp",
+    "options": {
+      "1": "smanjuje brzinu kretanja i omogućuje uključivanje autobusa u saobraćaj;",
+      "2": "zvučnim znakom upozorava vozača autobusa da ga propusti jer ima prvenstvo prolaza;",
+      "3": "prolazi pored autobusa jer ima prednost."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 18
+  },
+  {
+    "id": "traffic-situations-90",
+    "number": 90,
+    "source": "traffic-situations",
+    "question": "Kako treba postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q090.webp",
+    "options": {
+      "1": "proći prvi kroz raskrsnicu;",
+      "2": "propustiti autobus;",
+      "3": "proći kroz raskrsnicu prije vozila sa lijeve strane;",
+      "4": "proći kroz raskrsnicu prije autobusa, jer vrši radnju skretanja ulijevo."
+    },
+    "correct": [
+      "2",
+      "3"
+    ],
+    "page": 18
+  },
+  {
+    "id": "traffic-situations-91",
+    "number": 91,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici ako na raskrsnici skrećete ulijevo dok je na semaforu upaljeno zeleno svjetlo?",
+    "image": "assets/situations/q091.webp",
+    "options": {
+      "1": "zaustaviti se prije raskrsnice;",
+      "2": "propustiti tramvaj koji dolazi iz suprotnog smjera;"
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 19
+  },
+  {
+    "id": "traffic-situations-92",
+    "number": 92,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q092.webp",
+    "options": {
+      "1": "1 – 2 – 3;",
+      "2": "3 – 1 – 2;",
+      "3": "2 – 1 – 3."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 19
+  },
+  {
+    "id": "traffic-situations-93",
+    "number": 93,
+    "source": "traffic-situations",
+    "question": "U saobraćajnoj situaciji kao na slici pravilno skretanje udesno vrši:",
+    "image": "assets/situations/q093.webp",
+    "options": {
+      "1": "samo žuto vozilo",
+      "2": "samo plavo vozilo",
+      "3": "nijedno vozilo",
+      "4": "oba vozila"
+    },
+    "correct": [
+      "4"
+    ],
+    "page": 19
+  },
+  {
+    "id": "traffic-situations-94",
+    "number": 94,
+    "source": "traffic-situations",
+    "question": "Koji je redoslijed prolaska vozila na raskrsnici u situaciji kao na slici?",
+    "image": "assets/situations/q094.webp",
+    "options": {
+      "1": "tramvaj, autobus, putnički automobil;",
+      "2": "autobus, tramvaj, putnički automobil;",
+      "3": "autobus, putnički automobil, tramvaj."
+    },
+    "correct": [
+      "3"
+    ],
+    "page": 19
+  },
+  {
+    "id": "traffic-situations-95",
+    "number": 95,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti ako se za vrijeme upravljanja vozilom nađete u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q095.webp",
+    "options": {
+      "1": "zaustaviti vozilo;",
+      "2": "zvučnim znakom upozoriti pješake na opasnost;",
+      "3": "nastaviću kretanje jer nema obilježenog pješačkog prelaza."
+    },
+    "correct": [
+      "1",
+      "2"
+    ],
+    "page": 19
+  },
+  {
+    "id": "traffic-situations-96",
+    "number": 96,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici ako se vozač autobusa uključuje sa autobuskog stajališta u saobraćaj?",
+    "image": "assets/situations/q096.webp",
+    "options": {
+      "1": "smanjiti brzinu kretanja vozila;",
+      "2": "povećati brzinu kretanja vozila i proći prije autobusa;",
+      "3": "po potrebi zaustaviti vozilo i omogućiti vozaču autobusa da se bezbjedno uključi u saobraćaj;"
+    },
+    "correct": [
+      "1",
+      "3"
+    ],
+    "page": 20
+  },
+  {
+    "id": "traffic-situations-97",
+    "number": 97,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti, ako je autobus, označen kao na slici, zaustavljen na kolovozu zbog ulaska i izlaska djece?",
+    "image": "assets/situations/q097.webp",
+    "options": {
+      "1": "ako se krećem vozilom iza autobusa, zaustaviti se;",
+      "2": "ako se krećem vozilom iza autobusa, nastaviti kretanje;",
+      "3": "ako se krećem vozilom u susret autobusu, nastaviti kretanje vozilom;",
+      "4": "ako se krećem vozilom u susret autobusu, zaustaviti se."
+    },
+    "correct": [
+      "1",
+      "4"
+    ],
+    "page": 20
+  },
+  {
+    "id": "traffic-situations-98",
+    "number": 98,
+    "source": "traffic-situations",
+    "question": "Kako trebate postupiti u saobraćajnoj situaciji kao na slici prilikom približavanja raskrsnici?",
+    "image": "assets/situations/q098.webp",
+    "options": {
+      "1": "propustiti vozilo koje dolazi iz suprotnog smjera kretanja, i ima namjeru izvršiti radnju skretanja udesno;",
+      "2": "proći prvi kroz raskrsnicu;",
+      "3": "proći drugi kroz raskrsnicu;",
+      "4": "propustiti vozilo koje dolazi sa desne strane."
+    },
+    "correct": [
+      "1",
+      "4"
+    ],
+    "page": 20
+  },
+  {
+    "id": "traffic-situations-99",
+    "number": 99,
+    "source": "traffic-situations",
+    "question": "Kako trebate postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q099.webp",
+    "options": {
+      "1": "proći prvi kroz raskrsnicu jer nemate nikoga sa desne strane;",
+      "2": "propustiti vozilo koje dolazi sa lijeve strane;",
+      "3": "propustiti vozilo koje dolazi iz suprotnog smjera kretanja;",
+      "4": "proći drugi kroz raskrsnicu."
+    },
+    "correct": [
+      "2",
+      "3"
+    ],
+    "page": 20
+  },
+  {
+    "id": "traffic-situations-100",
+    "number": 100,
+    "source": "traffic-situations",
+    "question": "Kako trebate postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q100.webp",
+    "options": {
+      "1": "propustiti crveno vozilo;",
+      "2": "proći kroz raskrsnicu prije crvenog vozila;",
+      "3": "proći istovremeno sa crvenim vozilom kroz raskrsnicu."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 20
+  },
+  {
+    "id": "traffic-situations-101",
+    "number": 101,
+    "source": "traffic-situations",
+    "question": "Kako trebate postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q101.webp",
+    "options": {
+      "1": "povećati brzinu kretanja vozila;",
+      "2": "obratiti pažnju na postupke vozača vozila iz suprotnog smjera;",
+      "3": "propustiti vozilo iz suprotnog smjera, a zatim proći dionicu na kojoj je suženje puta."
+    },
+    "correct": [
+      "2",
+      "3"
+    ],
+    "page": 21
+  },
+  {
+    "id": "traffic-situations-102",
+    "number": 102,
+    "source": "traffic-situations",
+    "question": "Kako trebate postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q102.webp",
+    "options": {
+      "1": "proći prvi kroz raskrsnicu jer nastavljate kretanje vozilom pravo;",
+      "2": "propustiti oba vozila;",
+      "3": "proći drugi kroz raskrsnicu;",
+      "4": "propustiti samo crveni automobil."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 21
+  },
+  {
+    "id": "traffic-situations-103",
+    "number": 103,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti ako se krećete putem na kome se izvode radovi u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q103.webp",
+    "options": {
+      "1": "zaustaviti se jer se izvode radovi na saobraćajnoj traci kojom se krećem vozilom;",
+      "2": "nastaviti kretanje vozilom jer je na semaforu upaljeno zeleno svjetlo."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 21
+  },
+  {
+    "id": "traffic-situations-104",
+    "number": 104,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici ukoliko upravljate crnim utomobilom?",
+    "image": "assets/situations/q104.webp",
+    "options": {
+      "1": "obavezno se zaustaviti;",
+      "2": "nastaviti kretanje vozilom uz povećani oprez;",
+      "3": "obavezno izvršiti radnju skretanja udesno."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 21
+  },
+  {
+    "id": "traffic-situations-105",
+    "number": 105,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici na prelazu puta preko željezničke pruge u istom nivou kada se crvena svjetla počinju naizmjenično da pale?",
+    "image": "assets/situations/q105.webp",
+    "options": {
+      "1": "nastaviti kretanje vozilom dok se polubranik još nije spustio;",
+      "2": "zaustaviti vozilo ispred pružnog prelaza i sačekati prolazak voza."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 21
+  },
+  {
+    "id": "traffic-situations-106",
+    "number": 106,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q106.webp",
+    "options": {
+      "1": "propustiti oba vozila;",
+      "2": "propustiti samo crveno vozilo;",
+      "3": "proći prvi kroz raskrsnicu."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 22
+  },
+  {
+    "id": "traffic-situations-107",
+    "number": 107,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q107.webp",
+    "options": {
+      "1": "propustiti pješake koji prelaze preko pješačkog prelaza;",
+      "2": "proći prije pješaka;",
+      "3": "propustiti tramvaj koji dolazi iz suprotnog smjera."
+    },
+    "correct": [
+      "1",
+      "3"
+    ],
+    "page": 22
+  },
+  {
+    "id": "traffic-situations-108",
+    "number": 108,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti na raskrsnici u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q108.webp",
+    "options": {
+      "1": "proći prvi kroz raskrsnicu;",
+      "2": "propustiti oba vozila;",
+      "3": "propustiti samo crveno vozilo."
+    },
+    "correct": [
+      "2"
+    ],
+    "page": 22
+  },
+  {
+    "id": "traffic-situations-109",
+    "number": 109,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti na raskrsnici u saobraćajnoj situaciji kao na slici?",
+    "image": "assets/situations/q109.webp",
+    "options": {
+      "1": "propustiti autobus;",
+      "2": "proći kroz raskrsnicu prije autobusa."
+    },
+    "correct": [
+      "1"
+    ],
+    "page": 22
+  },
+  {
+    "id": "traffic-situations-110",
+    "number": 110,
+    "source": "traffic-situations",
+    "question": "Kako ćete postupiti u saobraćajnoj situaciji kao na slici ako je na semaforu upaljeno crveno svjetlo i dopunska strelica za skretanje udesno?",
+    "image": "assets/situations/q110.webp",
+    "options": {
+      "1": "propustiti crveno vozilo koje dolazi sa lijeve strane;",
+      "2": "proći kroz raskrsnicu prije crvenog vozila;",
+      "3": "izvršiću radnju skretanja udesno nakon crvenog vozila."
+    },
+    "correct": [
+      "1",
+      "3"
+    ],
+    "page": 22
+  }
+]
